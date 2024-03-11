@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"html/template"
 	"net/http"
 	"strconv"
 )
@@ -62,10 +63,15 @@ func main() {
 }
 
 func getEmployees(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-
 	if r.Method == "GET" {
-		json.NewEncoder(w).Encode(employees)
+		templ, err := template.ParseFiles("template.html")
+		if err != nil {
+			http.Error(w, fmt.Sprint("failed to parse template html, err: ", err), http.StatusInternalServerError)
+			return
+		}
+
+		templ.Execute(w, employees)
+
 		return
 	}
 
