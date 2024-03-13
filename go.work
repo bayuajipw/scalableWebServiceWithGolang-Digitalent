@@ -4,4 +4,6 @@ use (
 	./sesi-2
 	./sesi-3
 	./belajar-gin
+	./go-sql
+	./belajar-gorm
 )
