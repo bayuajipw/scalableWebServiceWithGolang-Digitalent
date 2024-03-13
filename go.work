@@ -8,4 +8,5 @@ use (
 	./belajar-gorm
 	./belajar-swaggo
 	./rest-api-fga
+	./assignment-2
 )
