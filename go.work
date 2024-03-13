@@ -6,4 +6,6 @@ use (
 	./belajar-gin
 	./go-sql
 	./belajar-gorm
+	./belajar-swaggo
+	./rest-api-fga
 )

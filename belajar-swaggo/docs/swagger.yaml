@@ -1,0 +1,42 @@
+definitions:
+  model.Account:
+    description: User account information with user id, fullname, and datebirth
+    properties:
+      date_birth:
+        type: string
+      full_name:
+        type: string
+      id:
+        type: integer
+    type: object
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+paths:
+  /accounts/{id}:
+    get:
+      consumes:
+      - application/json
+      description: get string by ID
+      parameters:
+      - description: Account ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Account'
+      summary: Show an account
+      tags:
+      - accounts
+swagger: "2.0"
