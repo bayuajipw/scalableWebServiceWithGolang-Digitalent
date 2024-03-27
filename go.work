@@ -9,4 +9,5 @@ use (
 	./belajar-swaggo
 	./rest-api-fga
 	./assignment-2
+	./final-project
 )
